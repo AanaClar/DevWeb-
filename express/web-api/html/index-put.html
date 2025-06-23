@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+	<h1>Editar Professor</h1>
+
+	<form onsubmit="editTeacher(event)">
+		<label for="name">Name: </label>
+		<input type="text" id="name" name="name" required /> <br />
+
+		<label for="role">Role: </label>
+		<input type="text" id="role" name="role" required /> <br />
+
+		<label for="img">Imagem: </label>
+		<input type="text" id="img" name="img" required /> <br />
+
+		<button type="submit">ATUALIZAR</button>
+	</form>
+
+	<script>
+		const params = new URLSearchParams(document.location.search.substring(1))
+		const id = params.get("id")
+
+		const editTeacher = async (event) => {
+			event.preventDefault()
+
+			const name = document.getElementById('name').value
+			const role = document.getElementById('role').value
+			const img = document.getElementById('img').value
+
+			const teacher = {name, role, img}
+
+			const res = await fetch(
+				`http://localhost:3000/teachers/edit/${id}`,
+				{
+					method: "PUT",
+					headers: {"Content-Type": "application/json"},
+					body: JSON.stringify(teacher)
+				}
+			)
+			const json = await res.json()
+		}
+
+		const retriveTeacher = async (event) => {
+			await fetch(`http://localhost:3000/teachers/retrive/${id}`)
+				.then(res => res.json())
+				.then(json => {
+					document.getElementById("name").value = json.name
+					document.getElementById("role").value = json.role
+					document.getElementById("img").value = json.img
+				})
+				.catch(err => console.log(err))
+		}
+	</script>
+</body>
+
+</html>

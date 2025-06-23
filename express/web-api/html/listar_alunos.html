@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Alunos</title>
+	<style>
+	tr, th, td {
+    border: 2px dotted rgb(238, 11, 223);
+    border-radius: 10px;
+    text-align: center;
+}
+	th{
+    background-color: rgb(246, 107, 186);
+
+}
+	tr:nth-child(even) {
+  background-color: #cb3f62;
+}
+	tr:nth-child(odd) {
+  background-color:pink;
+}
+
+
+</style>
+</head>
+<body>
+	<h1>Alunos</h1>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Curso</th>
+				<th>IRA</th>
+			</tr>
+		</thead>
+		<tbody id="tabela-alunos"> </tbody>
+	</table>
+
+	<script>
+		async function carregarAlunos() {
+			try {
+				const resposta = await fetch('http://localhost:3000/alunos/list');
+				const alunos = await resposta.json();
+
+				const tabela = document.getElementById('tabela-alunos');
+				tabela.innerHTML = "";
+
+				alunos.forEach((aluno) => {
+					const linha = document.createElement('tr');
+					linha.innerHTML = `
+						<td>${aluno.id}</td>
+						<td>${aluno.name}</td>
+						<td>${aluno.curso}</td>
+						<td>${aluno.ira}</td>
+					`;
+					tabela.appendChild(linha);
+				});
+			} catch (erro) {
+				console.error('Erro ao carregar alunos:', erro);
+			}
+		}
+
+		carregarAlunos();
+	</script>
+</body>
+</html>
