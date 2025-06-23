@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:bisque ;
+    padding: 20px;
+}
+p {
+    font-family: Arial, sans-serif;
+    color: #4caf50;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+    color: #333;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+th, td {
+    border: 2px solid #4caf50;
+    text-align: left;
+    padding: 10px;
+}
+
+th {
+    background-color: #dff0d8;
+    font-size: 18px;
+}
+td {
+    font-size: 16px;
+}

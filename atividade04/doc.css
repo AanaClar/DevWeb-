@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial;
+    margin: 0;
+}
+header {
+    padding: 20px;
+    text-align: center;
+    background:  #191970 ;
+    color: white;
+  }
+nav{
+    position: sticky;
+    display: flex;
+    background-color: #483D8B;
+    top: 0;
+}
+nav a{
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-align: center;
+    
+}
+nav a:hover {
+    background-color: #ddd;
+    color: #000080;
+  }
+section{
+    display: flex;
+}
+aside{
+    background-color: #6495ED;
+    padding: 15px;
+    flex: 40%;
+}
+content{
+    background-color: #B0C4DE;
+    padding: 10px;
+    flex: 60%;
+    padding: 15px;
+}
+.img{
+    background-color: #191970;
+    padding: 5px;
+    height: 190px;
+    width: 160px;
+}
+.img2{
+    background-color: #191970;
+    padding: 5px;
+    height: 490px;
+    width: 450px; 
+    color: white;
+}
+footer{
+    background-color: #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width: 400px){
+    header{
+        background-color: red;
+    }
+}
+.toggle-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px;
+    border-radius: 5px;
+}
+toggle-dark:checked ~ header {
+    background-color: #0d0d2b;
+    color: white;
+}
+toggle-dark:checked ~ nav {
+    background-color: #1f1f3d;
+}
+toggle-dark:checked ~ nav a {
+    color: #e0e0e0;
+}
+toggle-dark:checked ~ nav a:hover {
+    background-color: #444;
+    color: #ffcc00;
+}
+toggle-dark:checked ~ section {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+toggle-dark:checked ~ section aside {
+    background-color: #2a2a5a;
+}
+toggle-dark:checked ~ section content {
+    background-color: #3a3a5a;
+}
+toggle-dark:checked ~ section .img,
+toggle-dark:checked ~ section .img2 {
+    background-color: #333;
+    color: white;
+}
+toggle-dark:checked ~ footer {
+    background-color: #222;
+    color: #ddd;
+}

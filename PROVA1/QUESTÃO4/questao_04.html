@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card de Notificação</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .content {
+      padding: 20px;
+    }
+
+    .notification-card {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 250px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      z-index: 1000;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>Conteúdo da Página</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+  <div class="notification-card" id="notificationCard">
+    <div class="card-header">
+      <button class="close-btn" onclick="document.getElementById('notificationCard').style.display='none'">X</button>
+    </div>
+    <div class="card-content">
+      <h3>Novidade!</h3>
+      <p>Confira nossos novos produtos.</p>
+    </div>
+  </div>
+
+</body>
+</html>
